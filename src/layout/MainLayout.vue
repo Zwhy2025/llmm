@@ -100,12 +100,12 @@
 import { ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useThemeStore } from '@/stores/theme'
-import { useApiStore } from '@/stores/api'
+// import { useApiStore } from '@/stores/api' // TODO: Refactor this
 import { ElMessage } from 'element-plus'
 
 const route = useRoute()
 const themeStore = useThemeStore()
-const apiStore = useApiStore()
+// const apiStore = useApiStore() // TODO: Refactor this
 
 const isCollapse = ref(false)
 
@@ -128,25 +128,27 @@ const toggleCollapse = () => {
 
 // 导出数据
 const exportData = () => {
-  apiStore.exportData()
+  // apiStore.exportData() // TODO: Refactor this
+  ElMessage.info('此功能正在重构中...');
 }
 
 // 导入数据
 const importData = () => {
-  const input = document.createElement('input')
-  input.type = 'file'
-  input.accept = '.json'
-  input.onchange = async (e) => {
-    const file = e.target.files[0]
-    if (file) {
-      try {
-        await apiStore.importData(file)
-      } catch (error) {
-        ElMessage.error(`导入失败: ${error.message}`)
-      }
-    }
-  }
-  input.click()
+  // const input = document.createElement('input')
+  // input.type = 'file'
+  // input.accept = '.json'
+  // input.onchange = async (e) => {
+  //   const file = e.target.files[0]
+  //   if (file) {
+  //     try {
+  //       await apiStore.importData(file)
+  //     } catch (error) {
+  //       ElMessage.error(`导入失败: ${error.message}`)
+  //     }
+  //   }
+  // }
+  // input.click()
+  ElMessage.info('此功能正在重构中...');
 }
 </script>
 
